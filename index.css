@@ -1,0 +1,508 @@
+
+/* Global Styles */
+:root {
+  --font-primary: 'Helvetica Neue', Arial, sans-serif;
+  --color-bg: hsl(210, 36%, 96%);
+  --color-text: hsl(209, 61%, 16%);
+  --color-accent: hsl(360, 71%, 66%);
+  --color-accent-dark: hsl(360, 71%, 55%);
+  --color-border: hsl(210, 22%, 49%);
+  --color-light: #ccc;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+/* Top Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #282c34;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--color-accent);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: auto;
+}
+
+.navbar .logo:hover {
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #282c34;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--color-light);
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero button:hover {
+  background-color: var(--color-accent-dark);
+  transform: scale(1.05);
+}
+
+/* Section Layout */
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
+/* Title and Underline */
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.underline {
+  width: 6rem;
+  height: 0.25rem;
+  background: #c59d5f;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Menu Styling */
+.menu {
+  padding: 5rem 0;
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  display: grid;
+  gap: 1rem 2rem;
+  max-width: 25rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.photo {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  border: 0.25rem solid var(--color-accent);
+  border-radius: 0.25rem;
+}
+
+.item-info header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.item-info h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.price {
+  color: #c59d5f;
+  font-weight: bold;
+}
+
+.item-text {
+  margin-bottom: 0;
+  padding-top: 1rem;
+}
+
+/* Button Styling */
+button {
+  background-color: var(--color-accent);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent-dark);
+  transform: scale(1.05);
+}
+
+/* Form Styling */
+.form {
+  background: #fff;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form input,
+.form textarea,
+.form select {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-item {
+    grid-template-columns: 225px 1fr;
+    gap: 0 1.25rem;
+    max-width: 40rem;
+  }
+
+  .photo {
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-center {
+    width: 95vw;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .photo {
+    height: 150px;
+  }
+}
+
+/* Categories and Filters */
+.btn-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.active {
+  border-bottom: 2px solid #c59d5f;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avg-prices p {
+  font-size: 1.2rem;
+  color: var(--color-border);
+  margin: 0.5rem 0;
+}
+
+.average-price span {
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+/* Improved styles for ManageMenu component */
+
+/* Manage Menu Section */
+.manage-menu {
+  background: hsl(210, 36%, 96%);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.manage-menu h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: hsl(209, 61%, 16%);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.manage-menu div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manage-menu input,
+.manage-menu textarea,
+.manage-menu select {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid hsl(210, 22%, 49%);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.manage-menu input:focus,
+.manage-menu textarea:focus,
+.manage-menu select:focus {
+  outline: none;
+  border-color: hsl(360, 71%, 66%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.manage-menu button {
+  background-color: hsl(360, 71%, 66%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-menu button:hover {
+  background-color: hsl(360, 71%, 55%);
+  transform: scale(1.05);
+}
+
+.manage-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.manage-menu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.manage-menu li button {
+  background-color: hsl(360, 71%, 66%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-menu li button:hover {
+  background-color: hsl(360, 71%, 55%);
+  transform: scale(1.05);
+}
+
+/* styles.css */
+
+/* Manage Menu Section */
+.manage-menu {
+  background: hsl(210, 36%, 96%);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.manage-menu h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: hsl(209, 61%, 16%);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.manage-menu div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manage-menu input,
+.manage-menu textarea,
+.manage-menu select {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid hsl(210, 22%, 49%);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.manage-menu input:focus,
+.manage-menu textarea:focus,
+.manage-menu select:focus {
+  outline: none;
+  border-color: hsl(360, 71%, 66%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.manage-menu button {
+  background-color: hsl(360, 71%, 66%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-menu button:hover {
+  background-color: hsl(360, 71%, 55%);
+  transform: scale(1.05);
+}
+
+.manage-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.manage-menu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.manage-menu li button {
+  background-color: hsl(360, 71%, 66%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-menu li button:hover {
+  background-color: hsl(360, 71%, 55%);
+  transform: scale(1.05);
+}
